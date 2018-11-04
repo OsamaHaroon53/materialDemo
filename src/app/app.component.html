@@ -7,3 +7,22 @@
     <mat-radio-button value="1">option 1</mat-radio-button>
     <mat-radio-button value="2">option 2</mat-radio-button>
 </mat-radio-group>
+<br>
+<!-- Select -->
+<mat-form-field>
+    <mat-select [(ngModel)]="value">
+        <mat-option *ngFor="let food of foods" [value]="food.id">
+            {{food.viewValue}}</mat-option>
+    </mat-select>
+</mat-form-field>
+<br>
+
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Favorite food" value="food">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Leave a comment"></textarea>
+    </mat-form-field>
+</form>
