@@ -1,7 +1,7 @@
 <!-- checkbox -->
 <mat-checkbox #show [checked]="isCheck" (change)="onchange($event)">show detail</mat-checkbox>
 <div *ngIf="show.checked">this is description</div>
-
+<br>
 <!-- Radio Button -->
 <mat-radio-group value="1">
     <mat-radio-button value="1">option 1</mat-radio-button>
@@ -23,6 +23,16 @@
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-        <textarea matInput placeholder="Leave a comment"></textarea>
+        <textarea matInput matTextareaAutosize placeholder="Leave a comment"></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="choose a Date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker touchUi="true"></mat-datepicker>
     </mat-form-field>
 </form>
+<!-- Button -->
+<button color="primary" mat-raised-button>dfgfg</button>
+<br>
+<button mat-fab><mat-icon>add_alarm</mat-icon></button>
