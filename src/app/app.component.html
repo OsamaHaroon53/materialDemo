@@ -1,22 +1,23 @@
 <!-- checkbox -->
+<h1>checkbox</h1>
 <mat-checkbox #show [checked]="isCheck" (change)="onchange($event)">show detail</mat-checkbox>
 <div *ngIf="show.checked">this is description</div>
-<br>
 <!-- Radio Button -->
+<h1>Radio Button</h1>
 <mat-radio-group value="1">
     <mat-radio-button value="1">option 1</mat-radio-button>
     <mat-radio-button value="2">option 2</mat-radio-button>
 </mat-radio-group>
-<br>
 <!-- Select -->
+<h1>Select</h1>
 <mat-form-field>
     <mat-select [(ngModel)]="value">
         <mat-option *ngFor="let food of foods" [value]="food.id">
             {{food.viewValue}}</mat-option>
     </mat-select>
 </mat-form-field>
-<br>
-
+<!-- Input and Datepicker -->
+<h1>Input and Datepicker</h1>
 <form class="example-form">
     <mat-form-field class="example-full-width">
         <input matInput placeholder="Favorite food" value="food">
@@ -33,6 +34,28 @@
     </mat-form-field>
 </form>
 <!-- Button -->
+<h1>Button</h1>
 <button color="primary" mat-raised-button>dfgfg</button>
-<br>
 <button mat-fab><mat-icon>add_alarm</mat-icon></button>
+<!-- Chip -->
+<h1>Horizontal Chip</h1>
+<!-- <h3>Multiple selection</h3>
+<mat-chip-list multiple>
+    <mat-chip *ngFor="let food of foods"
+    (click)="food.selected = !food.selected"
+    [selected]="food.selected"
+    >{{food.viewValue}}</mat-chip>
+</mat-chip-list> -->
+<h3>Single selection</h3>
+<mat-chip-list>
+    <mat-chip *ngFor="let food of foods"
+    (click)="foodSelected(food)"
+    [selected]="food.selected"
+    >{{food.viewValue}}</mat-chip>
+</mat-chip-list>
+<h1>Vertical Chip</h1>
+<mat-chip-list class="mat-chip-list-stacked" aria-orientation="vertical">
+    <mat-chip selected>one</mat-chip>
+    <mat-chip>two</mat-chip>
+    <mat-basic-chip>two</mat-basic-chip>
+</mat-chip-list>

@@ -6,14 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  isCheck=true;
-  onchange($event){
+  isCheck = true;
+  onchange($event) {
     console.log($event);
   }
-  value="1";
+  value = "1";
   foods = [
-    {id: '0', viewValue: 'Steak'},
-    {id: '1', viewValue: 'Pizza'},
-    {id: '2', viewValue: 'Tacos'}
+    { id: '0', viewValue: 'Steak' },
+    { id: '1', viewValue: 'Pizza' },
+    { id: '2', viewValue: 'Tacos' }
   ];
+  foodSelected(food) {
+    this.foods
+      .filter(f => f != food)
+      .forEach(f => f['selected'] = false);
+    food.selected = !food.selected;
+  }
 }
